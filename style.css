@@ -14,6 +14,20 @@ body {
 }
 
 
+/*  Links */
+
+a {
+    display: block;
+    text-decoration: none !important;
+    color: #fff;
+    transition: color 0.2s ease-in-out;
+}
+
+a:hover {
+    color: #aaaaaa;
+}
+
+
 /*  Schriften  */
 
 h1 {
@@ -48,43 +62,43 @@ h2 {
     padding: 10px 0;
 }
 
-.charts {
+.content {
     width: 100%;
     padding: 0 15px;
 }
 
-.charts_box {
+.content_box {
     margin-top: 15px;
     border-top: 1px solid #2b2a2a;
 }
 
-.charts_box a {
-    display: block;
-    text-decoration: none;
-    color: #fff;
-}
-
-.charts_boxSong {
+.content_boxSong {
     padding: 10px 0;
     border-bottom: 1px solid #2b2a2a;
-    transition: color 0.2s ease-in-out;
 }
 
-.charts_box a:hover {
-    color: #aaaaaa;
-}
-
-span.SongNr {
+span.contentNr {
     padding-right: 20px;
 }
 
-.charts_boxSong img {
+.content_boxSong img {
     width: 60px;
     height: 60px;
 }
 
-span.SongName {
+span.contentName {
     padding-left: 20px;
+}
+
+
+/*  Unterseiten */
+
+.content_subpage {
+    margin: 45px 15px 0 15px;
+}
+
+.content_subpage_box {
+    margin-top: 20px;
 }
 
 @media screen and (min-width: 780px) {
