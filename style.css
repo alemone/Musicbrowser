@@ -104,6 +104,10 @@ span.contentName {
 
 /*  Deteil Seite*/
 
+.row {
+    padding-top: 15px;
+}
+
 .col_Image img {
     width: 100%;
     height: auto;
