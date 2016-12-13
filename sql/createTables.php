@@ -4,6 +4,8 @@ if (!$db) {
     die('Verbindung fehlgeschlagen\n Error: ' . mysql_error());
 }
 
+$db->set_charset("utf8");
+
 $db->query("Drop Database IF EXISTS Musicbrowser;");
 $db->query("CREATE DATABASE IF NOT EXISTS Musicbrowser;");
 $db->query("USE Musicbrowser;");

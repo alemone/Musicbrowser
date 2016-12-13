@@ -7,6 +7,7 @@
 
         public function getjson(){
             $mysqli = new mysqli('localhost', 'root', '', 'musicbrowser');
+            $mysqli->set_charset("utf8");
             $myArray = array();
             if ($result = $mysqli->query("select * from kuenstler;")) {
                 $tempArray = array();
@@ -14,7 +15,7 @@
                     $tempArray = $row;
                     array_push($myArray, $tempArray);
                 }
-            $this->json = json_encode($myArray);
+            $this->json = json_encode($myArray, JSON_UNESCAPED_UNICODE);
             }
             $result->close();
             $mysqli->close();

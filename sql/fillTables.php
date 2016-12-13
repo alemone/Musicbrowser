@@ -4,6 +4,8 @@ if (!$db) {
     die('Verbindung fehlgeschlagen\n Error: ' . mysql_error());
 }
 
+$db->set_charset("utf8");
+
 //Künstler
 $test = $db->query("INSERT INTO `kuenstler` (`pk_kuenstler`, `name`, `beschreibung`, `bildpfad`) VALUES (
     NULL, 
