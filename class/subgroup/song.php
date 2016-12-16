@@ -9,7 +9,7 @@
             $mysqli = new mysqli('localhost', 'root', '', 'musicbrowser');
             $mysqli->set_charset("utf8");
             $myArray = array();
-            if ($result = $mysqli->query("select pk_kuenstler, name, beschreibung, bild from kuenstler where pk_kuenstler = $id;")) {
+            if ($result = $mysqli->query("select * from song where fk_album = $id;")) {
                 $tempArray = array();
                 while($row = $result->fetch_object()) {
                     $tempArray = $row;
