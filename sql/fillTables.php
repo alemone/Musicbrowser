@@ -39,7 +39,7 @@ $test = $db->query("INSERT INTO `kuenstler` (`pk_kuenstler`, `name`, `beschreibu
 $db->query("INSERT INTO `album` (`pk_album`, `name`, `pfad`, `fk_kuenstler`) VALUES (NULL, 'Sadnecessary', 'milkychance.gif', '1')");
 $db->query("INSERT INTO `album` (`pk_album`, `name`, `pfad`, `fk_kuenstler`) VALUES (NULL, 'Wrong Crowd', 'tomodell.gif', '2')");
 $db->query("INSERT INTO `album` (`pk_album`, `name`, `pfad`, `fk_kuenstler`) VALUES (NULL, 'Blue & Lonesome', 'rollingstones.gif', '3')");
-$db->query("INSERT INTO `album` (`pk_album`, `name`, `pfad`, `fk_kuenstler`) VALUES (NULL, 'Hardwired... To Self-Destruct', 'metalica.gif', '4')");
+$db->query("INSERT INTO `album` (`pk_album`, `name`, `pfad`, `fk_kuenstler`) VALUES (NULL, 'Hardwired... To Self-Destruct', 'metallica.gif', '4')");
 
 //Songs
 $db->query("INSERT INTO `song` (`name`, `fk_album`, `bild`, `bewertung`, `youtubeLink`) VALUES ('Stunner', '1', 'milkychance.gif', '24', 'https://www.youtube.com/watch?v=HHPLi3hW0jU')");
