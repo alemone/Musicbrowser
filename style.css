@@ -24,7 +24,12 @@ a {
 }
 
 a:hover {
-    color: #aaaaaa;
+    color: #aaaaaa !important;
+}
+
+a:visited,
+a:active {
+    color: #fff;
 }
 
 
@@ -37,6 +42,9 @@ h1 {
 h2 {
     font-size: 18px;
 }
+
+
+/*  Elements*/
 
 .wrapper {
     width: 100%;

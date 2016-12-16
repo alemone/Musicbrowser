@@ -1,11 +1,12 @@
 <!DOCTYPE html>
 <!-- Webseite als Angular - APP deklarieren-->
-<html lang="de">
+<html lang="de" ng-app="musicbrowserApp">
 
 <head>
     <meta charset="utf-8">
     <title>musicbrowser</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <link rel="icon" href="./img/favicon/music.png" type="image/png" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"></script>
     <!-- Bootstrap - CSS -->
@@ -28,15 +29,28 @@
         </div>
         <div class="content_subpage">
             <h2>Songs</h2>
-            <div class="content_box">
-                <a href="detail.html">
+            <div class="content_box" ng-controller="songController">
+                <a href="{{song.youtubeLink}}" target="_blank" ng-repeat="song in songs">
                     <div class="content_boxSong col-xs-12 col-sm-6 col-md-6 col-lg-6">
-                        <img src="img/3.png"><span class="contentName">Liedname</span>
+                        <img src="./img/{{song.bild}}"><span class="contentName">{{song.name}}</span>
                     </div>
                 </a>
             </div>
         </div>
     </div>
 </body>
+<script>
+    var musicbrowserApp = new angular.module('musicbrowserApp', []);
+    // Standart Controller
+    musicbrowserApp.controller('songController',
+        function songController($scope, $http) {
+            $http.get('uebersicht.php?class=song').success(
+                function(data) {
+                    $scope.songs = data;
+                }
+            );
+        }
+    );
+</script>
 
 </html>
