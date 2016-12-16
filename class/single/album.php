@@ -1,15 +1,15 @@
 <?php
     class Controller{
         private $json;
-        function __construct(){
-                $this->getjson();
+        function __construct($id){
+                $this->getjson($id);
         }
 
-        public function getjson(){
+        public function getjson($id){
             $mysqli = new mysqli('localhost', 'root', '', 'musicbrowser');
             $mysqli->set_charset("utf8");
             $myArray = array();
-            if ($result = $mysqli->query("select pk_kuenstler, name, bild from kuenstler;")) {
+            if ($result = $mysqli->query("select * from album where pk_album = $id;")) {
                 $tempArray = array();
                 while($row = $result->fetch_object()) {
                     $tempArray = $row;

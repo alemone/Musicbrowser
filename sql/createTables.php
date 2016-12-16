@@ -13,14 +13,14 @@ $db->query("CREATE TABLE IF NOT EXISTS `Musicbrowser`.`kuenstler`(
                 `pk_kuenstler` INT(5) NOT NULL AUTO_INCREMENT , 
                 `name` VARCHAR(40) NOT NULL , 
                 `beschreibung` VARCHAR(2048) NOT NULL , 
-                `bildpfad` VARCHAR(55) NOT NULL , 
+                `bild` VARCHAR(55) NOT NULL , 
                 PRIMARY KEY (`pk_kuenstler`)
 	        ) ENGINE = InnoDB;");
 
 $db->query("CREATE TABLE IF NOT EXISTS `musicbrowser`.`album` ( 
 		        `pk_album` INT(5) NOT NULL AUTO_INCREMENT , 
 		        `name` VARCHAR(40) NOT NULL , 
-		        `pfad` VARCHAR(55) NOT NULL , 
+		        `bild` VARCHAR(55) NOT NULL , 
 		        `fk_kuenstler` INT(5) , 
 		        PRIMARY KEY (`pk_album`),
 		        FOREIGN KEY (fk_kuenstler) REFERENCES kuenstler(pk_kuenstler)
