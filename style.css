@@ -41,6 +41,7 @@ h1 {
 
 h2 {
     font-size: 18px;
+    padding-bottom: 20px;
 }
 
 
@@ -59,7 +60,7 @@ h2 {
 
 .filter {
     width: 100%;
-    padding: 35px 15px;
+    padding: 20px 15px;
 }
 
 .filter i {
@@ -75,12 +76,7 @@ h2 {
     padding: 0 15px;
 }
 
-.content_box {
-    margin-top: 15px;
-    border-top: 1px solid #2b2a2a;
-}
-
-.content_boxSong {
+.content_boxindex {
     padding: 10px 0;
     border-bottom: 1px solid #2b2a2a;
 }
@@ -89,13 +85,38 @@ span.contentNr {
     padding-right: 20px;
 }
 
-.content_boxSong img {
+.content_boxSong {
+    padding: 10px 0;
+    border-bottom: 1px solid #2b2a2a;
+}
+
+.content_boxSong img,
+.content_boxSongindex img {
     width: 60px;
     height: 60px;
 }
 
 span.contentName {
     padding-left: 20px;
+}
+
+.content_box-left,
+.content_box-right {
+    float: left !important;
+}
+
+.content_box-right {
+    position: absolute;
+    top: 10px;
+    right: 0;
+    width: 30px !important;
+}
+
+.content_box-right button {
+    display: block;
+    border: none;
+    background-color: #232323;
+    outline: none;
 }
 
 
@@ -130,8 +151,14 @@ span.contentName {
         width: 760px;
         margin: 0 auto;
     }
+    .filter {
+        padding: 35px 15px 25px 15px;
+    }
     .col_Content {
         margin-top: 0;
+    }
+    .content_box-right {
+        right: 30px;
     }
 }
 

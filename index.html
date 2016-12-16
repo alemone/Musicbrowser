@@ -38,15 +38,19 @@
                 <p class=""><i class="fa fa-user-o" aria-hidden="true"></i>Künstler</p>
             </a>
         </div>
-        <div class="content">
+        <div class="content" ng-controller="top20Controller">
             <h2><i class="fa fa-line-chart" aria-hidden="true"></i>&nbsp;Top Charts</h2>
-            <div class="content_box" ng-controller="top20Controller">
-
-                <a href="{{song.youtubeLink}}" target="_blank" ng-repeat="song in top20">
-                    <div class="content_boxSong col-xs-12 col-sm-6 col-md-6 col-lg-6">
-                        <span class="contentNr">{{$index + 1}}</span><img src="./img/{{song.bild}}"><span class="contentName">{{song.name}}
-                    </div>
-                </a>
+            <div class="content_boxindex col-xs-12 col-sm-6 col-md-6 col-lg-6" ng-repeat="song in top20">
+                <div class "content_box-left">
+                    <a href="{{song.youtubeLink}}" target="_blank">
+                        <div class="content_boxSongindex">
+                            <span class="contentNr">{{$index + 1}}</span><img src="./img/{{song.bild}}"><span class="contentName">{{song.name}}</span>
+                        </div>
+                    </a>
+                </div>
+                <div class="content_box-right">
+                    <button type="button" id="up"><i class="fa fa-angle-up fa-2x" aria-hidden="true"></i></button><button type="button" id="down"><i class="fa fa-angle-down fa-2x" aria-hidden="true"></i></button>
+                </div>
             </div>
         </div>
 </body>

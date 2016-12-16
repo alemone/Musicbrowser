@@ -30,7 +30,7 @@
         <div class="content_subpage" ng-controller="kuenstlerController">
             <h2>{{kuenstler.name}}</h2>
             <div class="row">
-                <div class="col_Image col-xs-12 col-sm-4 col-md-4 col-lg-4"><img src="./img/Gross/{{kuenstler.bildpfad}}"></div>
+                <div class="col_Image col-xs-12 col-sm-4 col-md-4 col-lg-4"><img src="./img/Gross/{{kuenstler.bild}}"></div>
                 <div class="col_Content col-xs-12 col-sm-8 col-md-8 col-lg-8">{{kuenstler.beschreibung}}</div>
             </div>
         </div>
@@ -40,7 +40,7 @@
     // Standart Controller
     musicbrowserApp.controller('kuenstlerController',
         function kuenstlerController($scope, $http) {
-            $http.get('uebersicht.php?class=kuenstler').success(
+            $http.get('uebersicht.php?class=kuenstler&id=').success(
                 function(data) {
                     $scope.kuenstler = data;
                 }
