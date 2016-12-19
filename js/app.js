@@ -69,6 +69,11 @@ musicbrowserApp.controller('albenDetailController',
                 $scope.alben = data[0];
             }
         );
+        $http.get('data.php?class=song&fk=' + $routeParams.id).success( //Ronny Müller Vorlage für Nadja
+            function(data) {
+                $scope.songs = data;
+            }
+        );
     }
 );
 // Künstler Controller
@@ -87,6 +92,11 @@ musicbrowserApp.controller('kuenstlerDetailController',
         $http.get('data.php?class=kuenstler&id=' + $routeParams.id).success(
             function(data) {
                 $scope.kuenstler = data[0];
+            }
+        );
+        $http.get('data.php?class=album&fk=' + $routeParams.id).success( //Ronny Müller Vorlage für Nadja
+            function(data) {
+                $scope.alben = data;
             }
         );
     }
