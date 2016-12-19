@@ -29,12 +29,14 @@ $db->query("CREATE TABLE IF NOT EXISTS `musicbrowser`.`album` (
 $db->query("CREATE TABLE `musicbrowser`.`song` ( 
 		`pk_song` INT(5) NOT NULL AUTO_INCREMENT , 
 		`name` VARCHAR(40) NOT NULL , 
+		`fk_kuenstler` INT(5) ,
 		`fk_album` INT(5) , 
 		`bild` VARCHAR(55) NOT NULL , 
 		`bewertung` INT(4) NOT NULL , 
 		`youtubeLink` VARCHAR(55) NOT NULL , 
 		PRIMARY KEY (`pk_song`),
-		FOREIGN KEY (fk_album) REFERENCES album(pk_album)
+		FOREIGN KEY (fk_album) REFERENCES album(pk_album),
+		FOREIGN KEY (fk_kuenstler) REFERENCES kuenstler(pk_kuenstler)
 		) ENGINE = InnoDB;");
 
 $db->close();

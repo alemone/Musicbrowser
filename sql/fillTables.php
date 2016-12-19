@@ -42,14 +42,14 @@ $db->query("INSERT INTO `album` (`pk_album`, `name`, `bild`, `fk_kuenstler`) VAL
 $db->query("INSERT INTO `album` (`pk_album`, `name`, `bild`, `fk_kuenstler`) VALUES (NULL, 'Hardwired... To Self-Destruct', 'metallica.gif', '4')");
 
 //Songs
-$db->query("INSERT INTO `song` (`name`, `fk_album`, `bild`, `bewertung`, `youtubeLink`) VALUES ('Stunner', '1', 'milkychance.gif', '24', 'https://www.youtube.com/watch?v=HHPLi3hW0jU')");
-$db->query("INSERT INTO `song` (`name`, `fk_album`, `bild`, `bewertung`, `youtubeLink`) VALUES ('Flashed Junk Mind', '1', 'milkychance.gif', '13', 'https://www.youtube.com/watch?v=r8BsuT0PWdI')");
-$db->query("INSERT INTO `song` (`name`, `fk_album`, `bild`, `bewertung`, `youtubeLink`) VALUES ('Becoming', '1', 'milkychance.gif', '14', 'https://www.youtube.com/watch?v=o0DCDlRGlzM')");
+$db->query("INSERT INTO `song` (`name`, `fk_kuenstler`, `fk_album`, `bild`, `bewertung`, `youtubeLink`) VALUES ('Stunner', '1', '1', 'milkychance.gif', '24', 'https://www.youtube.com/watch?v=HHPLi3hW0jU')");
+$db->query("INSERT INTO `song` (`name`, `fk_kuenstler`, `fk_album`, `bild`, `bewertung`, `youtubeLink`) VALUES ('Flashed Junk Mind', '1', '1', 'milkychance.gif', '13', 'https://www.youtube.com/watch?v=r8BsuT0PWdI')");
+$db->query("INSERT INTO `song` (`name`, `fk_kuenstler`, `fk_album`, `bild`, `bewertung`, `youtubeLink`) VALUES ('Becoming', '1', '1', 'milkychance.gif', '14', 'https://www.youtube.com/watch?v=o0DCDlRGlzM')");
 
 
-$db->query("INSERT INTO `song` (`name`, `fk_album`, `bild`, `bewertung`, `youtubeLink`) VALUES ('Wrong Crowd', '2', 'tomodell.gif', '46', 'https://www.youtube.com/watch?v=uvosjKUKCLo')");
-$db->query("INSERT INTO `song` (`name`, `fk_album`, `bild`, `bewertung`, `youtubeLink`) VALUES ('Magnetised', '2', 'tomodell.gif', '13', 'https://www.youtube.com/watch?v=4fgzu9Fo66Y')");
-$db->query("INSERT INTO `song` (`name`, `fk_album`, `bild`, `bewertung`, `youtubeLink`) VALUES ('Concrete', '2', 'tomodell.gif', '35', 'https://www.youtube.com/watch?v=bnZxWpwvFEk')");
+$db->query("INSERT INTO `song` (`name`, `fk_kuenstler`, `fk_album`, `bild`, `bewertung`, `youtubeLink`) VALUES ('Wrong Crowd', '2', '2', 'tomodell.gif', '46', 'https://www.youtube.com/watch?v=uvosjKUKCLo')");
+$db->query("INSERT INTO `song` (`name`, `fk_kuenstler`, `fk_album`, `bild`, `bewertung`, `youtubeLink`) VALUES ('Magnetised', '2', '2', 'tomodell.gif', '13', 'https://www.youtube.com/watch?v=4fgzu9Fo66Y')");
+$db->query("INSERT INTO `song` (`name`, `fk_kuenstler`, `fk_album`, `bild`, `bewertung`, `youtubeLink`) VALUES ('Concrete', '2', '2', 'tomodell.gif', '35', 'https://www.youtube.com/watch?v=bnZxWpwvFEk')");
 
 $db->close();
 ?>
