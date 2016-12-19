@@ -80,11 +80,10 @@ h2 {
 .content_boxindex {
     padding: 10px 0;
     border-bottom: 1px solid #2b2a2a;
-    s
 }
 
-span.contentNr {
-    padding-right: 20px;
+div.contentNr {
+    float: left;
 }
 
 .content_boxSong {
@@ -94,12 +93,17 @@ span.contentNr {
 
 .content_boxSong img,
 .content_boxSongindex img {
+    margin: 5px 20px;
     width: 60px;
     height: 60px;
 }
 
-span.contentName {
-    padding-left: 20px;
+div.contentName {
+    float: left;
+}
+
+div.contentName span {
+    font-size: 14px;
 }
 
 .content_box-left,
@@ -109,7 +113,7 @@ span.contentName {
 
 .content_box-right {
     position: absolute;
-    top: 10px;
+    top: 0;
     right: 0;
     width: 30px !important;
 }
@@ -119,6 +123,15 @@ span.contentName {
     border: none;
     background-color: #232323;
     outline: none;
+}
+
+.content_box-right button:active {
+    color: #aaaaaa !important;
+}
+
+span.voteNr {
+    margin-top: -10px;
+    margin-bottom: -10px;
 }
 
 

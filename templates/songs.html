@@ -1,10 +1,16 @@
-<div class="content_subpage">
-    <h2>Songs</h2>
-    <div class="content_box">
-        <a href="{{song.youtubeLink}}" target="_blank" ng-repeat="song in songs">
-            <div class="content_boxSong col-xs-12 col-sm-6 col-md-6 col-lg-6">
-                <img src="./img/{{song.bild}}"><span class="contentName">{{song.name}}</span>
+<div class="content_boxindex col-xs-12 col-sm-6 col-md-6 col-lg-6" ng-repeat="song in top20">
+    <div class="content_box-left">
+        <a href="{{song.youtubeLink}}" target="_blank">
+            <div class="content_boxSongindex">
+                <div class="contentNr">{{$index + 1}}<img src="./img/{{song.bild}}"></div>
+                <div class="contentName">{{song.name}}<br><span>{{song.kuenstler}}<span></div>
+                </div>
+            </a>
+        </div>
+        <div class="content_box-right">
+            <button type="button" id="up" ng-click="upvote()"><i class="fa fa-angle-up fa-2x" aria-hidden="true"></i></button>
+            <span class="voteNr">{{song.bewertung}}</span>
+                    <button type="button" id="down" ng-click="downvote()"><i class="fa fa-angle-down fa-2x" aria-hidden="true"></i></button>
+                </div>
             </div>
-        </a>
     </div>
-</div>
