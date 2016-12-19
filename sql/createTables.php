@@ -33,7 +33,7 @@ $db->query("CREATE TABLE `musicbrowser`.`song` (
 		`bild` VARCHAR(55) NOT NULL , 
 		`bewertung` INT(4) NOT NULL , 
 		`youtubeLink` VARCHAR(55) NOT NULL , 
-		PRIMARY KEY (`id_song`),
+		PRIMARY KEY (`pk_song`),
 		FOREIGN KEY (fk_album) REFERENCES album(pk_album)
 		) ENGINE = InnoDB;");
 
