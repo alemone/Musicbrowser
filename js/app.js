@@ -62,11 +62,11 @@ musicbrowserApp.controller('albumController',
 );
 
 // Album Detail Controller
-musicbrowserApp.controller('voterController',
-    function voterController($scope, $http) {
-        $http.get('data.php?class=vote').success(
+musicbrowserApp.controller('albenDetailController',
+    function albenDetailController($scope, $http, $routeParams) {
+        $http.get('data.php?class=album&id=' + $routeParams.id).success(
             function(data) {
-                $scope.alben = data;
+                $scope.alben = data[0];
             }
         );
         $http.get('data.php?class=song&fk=' + $routeParams.id).success( //Ronny Müller Vorlage für Nadja
@@ -101,6 +101,7 @@ musicbrowserApp.controller('kuenstlerDetailController',
         );
     }
 );
+
 
 // up udn downvote
 
