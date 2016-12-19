@@ -1,36 +1,36 @@
-/**
- * Created by Nicolas on 17.12.2016.
- */
-
 var musicbrowserApp = new angular.module('musicbrowserApp', ['ngRoute']);
 
 musicbrowserApp.config(function($routeProvider) {
     $routeProvider
         .when("/", {
-            templateUrl : "./templates/main.html",
+            templateUrl: "./templates/main.html",
             controller: "top20Controller"
         })
         .when("/songs", {
-            templateUrl : "./templates/songs.html",
+            templateUrl: "./templates/songs.html",
             controller: "songController"
         })
         .when("/alben", {
-            templateUrl : "./templates/alben.html",
+            templateUrl: "./templates/alben.html",
             controller: "albumController"
         })
+        .when("/album/:id", {
+            templateUrl: "./templates/albumdetail.html",
+            controller: "albenDetailController"
+        })
         .when("/artists", {
-            templateUrl : "./templates/kuenstler.html",
+            templateUrl: "./templates/kuenstler.html",
             controller: "kuenstlerController"
         })
         .when("/artists/:id", {
-            templateUrl : "./templates/kuenstlerdetail.html",
+            templateUrl: "./templates/kuenstlerdetail.html",
             controller: "kuenstlerDetailController"
         })
         .otherwise({
             redirectTo: '/'
         });
 });
-// Standart Controller
+// Top20 Controller
 musicbrowserApp.controller('top20Controller',
     function top20Controller($scope, $http) {
         $http.get('uebersicht.php?class=top20').success(
@@ -40,7 +40,7 @@ musicbrowserApp.controller('top20Controller',
         );
     }
 );
-// Standart Controller
+// Song Controller
 musicbrowserApp.controller('songController',
     function songController($scope, $http) {
         $http.get('uebersicht.php?class=song').success(
@@ -50,17 +50,28 @@ musicbrowserApp.controller('songController',
         );
     }
 );
-// Standart Controller
-musicbrowserApp.controller('kuenstlerDetailController',
-    function kuenstlerDetailController($scope, $http, $routeParams) {
-        $http.get('uebersicht.php?class=kuenstler&id=' + $routeParams.id).success(
+// Album Controller
+musicbrowserApp.controller('albumController',
+    function albumController($scope, $http) {
+        $http.get('uebersicht.php?class=album').success(
             function(data) {
-                $scope.kuenstler = data[0];
+                $scope.alben = data;
             }
         );
     }
 );
-// Standart Controller
+
+// Album Detail Controller
+musicbrowserApp.controller('albenDetailController',
+    function albenDetailController($scope, $http, $routeParams) {
+        $http.get('uebersicht.php?class=album&id=' + $routeParams.id).success(
+            function(data) {
+                $scope.alben = data[0];
+            }
+        );
+    }
+);
+// Künstler Controller
 musicbrowserApp.controller('kuenstlerController',
     function kuenstlerController($scope, $http) {
         $http.get('uebersicht.php?class=kuenstler').success(
@@ -70,12 +81,12 @@ musicbrowserApp.controller('kuenstlerController',
         );
     }
 );
-// Standart Controller
-musicbrowserApp.controller('albumController',
-    function albumController($scope, $http) {
-        $http.get('uebersicht.php?class=album').success(
+// Künstler Detail Controller
+musicbrowserApp.controller('kuenstlerDetailController',
+    function kuenstlerDetailController($scope, $http, $routeParams) {
+        $http.get('uebersicht.php?class=kuenstler&id=' + $routeParams.id).success(
             function(data) {
-                $scope.alben = data;
+                $scope.kuenstler = data[0];
             }
         );
     }
