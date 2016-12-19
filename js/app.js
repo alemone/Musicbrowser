@@ -33,7 +33,7 @@ musicbrowserApp.config(function($routeProvider) {
 // Top20 Controller
 musicbrowserApp.controller('top20Controller',
     function top20Controller($scope, $http) {
-        $http.get('uebersicht.php?class=top20').success(
+        $http.get('data.php?class=top20').success(
             function(data) {
                 $scope.top20 = data;
             }
@@ -43,7 +43,7 @@ musicbrowserApp.controller('top20Controller',
 // Song Controller
 musicbrowserApp.controller('songController',
     function songController($scope, $http) {
-        $http.get('uebersicht.php?class=song').success(
+        $http.get('data.php?class=song').success(
             function(data) {
                 $scope.songs = data;
             }
@@ -53,7 +53,7 @@ musicbrowserApp.controller('songController',
 // Album Controller
 musicbrowserApp.controller('albumController',
     function albumController($scope, $http) {
-        $http.get('uebersicht.php?class=album').success(
+        $http.get('data.php?class=album').success(
             function(data) {
                 $scope.alben = data;
             }
@@ -64,7 +64,7 @@ musicbrowserApp.controller('albumController',
 // Album Detail Controller
 musicbrowserApp.controller('albenDetailController',
     function albenDetailController($scope, $http, $routeParams) {
-        $http.get('uebersicht.php?class=album&id=' + $routeParams.id).success(
+        $http.get('data.php?class=album&id=' + $routeParams.id).success(
             function(data) {
                 $scope.alben = data[0];
             }
@@ -74,7 +74,7 @@ musicbrowserApp.controller('albenDetailController',
 // Künstler Controller
 musicbrowserApp.controller('kuenstlerController',
     function kuenstlerController($scope, $http) {
-        $http.get('uebersicht.php?class=kuenstler').success(
+        $http.get('data.php?class=kuenstler').success(
             function(data) {
                 $scope.kuenstler = data;
             }
@@ -84,7 +84,7 @@ musicbrowserApp.controller('kuenstlerController',
 // Künstler Detail Controller
 musicbrowserApp.controller('kuenstlerDetailController',
     function kuenstlerDetailController($scope, $http, $routeParams) {
-        $http.get('uebersicht.php?class=kuenstler&id=' + $routeParams.id).success(
+        $http.get('data.php?class=kuenstler&id=' + $routeParams.id).success(
             function(data) {
                 $scope.kuenstler = data[0];
             }
