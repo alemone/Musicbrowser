@@ -3,13 +3,10 @@
     <div class="row">
         <div class="col_Image col-xs-12 col-sm-4 col-md-4 col-lg-4"><img src="./img/Gross/{{alben.bild}}"></div>
         <div class="col_Content col-xs-12 col-sm-8 col-md-8 col-lg-8">
-            <h1>Songs von diesem Album:</h1>
-            <!-- //Ronny Müller Vorlage für Nadja -->
-            <table>
-                <tr ng-repeat="song in songs">
-                    <td>{{song.name}}</td>
-                </tr>
-            </table>
+            <h3>Songs aus dem Album {{alben.name}}</h3>
+            <div ng-repeat="song in songs">
+                <a href="{{song.youtubeLink}}" target="blank">{{song.name}}</a>
+            </div>
         </div>
     </div>
 </div>
