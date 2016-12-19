@@ -27,7 +27,7 @@ $db->query("CREATE TABLE IF NOT EXISTS `musicbrowser`.`album` (
 	        ) ENGINE = InnoDB;");
 
 $db->query("CREATE TABLE `musicbrowser`.`song` ( 
-		`id_song` INT(5) NOT NULL AUTO_INCREMENT , 
+		`pk_song` INT(5) NOT NULL AUTO_INCREMENT , 
 		`name` VARCHAR(40) NOT NULL , 
 		`fk_album` INT(5) , 
 		`bild` VARCHAR(55) NOT NULL , 
