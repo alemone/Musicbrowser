@@ -62,11 +62,11 @@ musicbrowserApp.controller('albumController',
 );
 
 // Album Detail Controller
-musicbrowserApp.controller('albenDetailController',
-    function albenDetailController($scope, $http, $routeParams) {
-        $http.get('data.php?class=album&id=' + $routeParams.id).success(
+musicbrowserApp.controller('voterController',
+    function voterController($scope, $http) {
+        $http.get('data.php?class=vote').success(
             function(data) {
-                $scope.alben = data[0];
+                $scope.alben = data;
             }
         );
     }
@@ -89,5 +89,20 @@ musicbrowserApp.controller('kuenstlerDetailController',
                 $scope.kuenstler = data[0];
             }
         );
+    }
+);
+
+// up udn downvote
+
+// up
+musicbrowserApp.controller('upController',
+    function upController($scope, $http) {
+        $http.get('data.php?upvote=1').success();
+    }
+);
+// down
+musicbrowserApp.controller('downController',
+    function downController($scope, $http) {
+        $http.get('data.php?downvote=2').success();
     }
 );
