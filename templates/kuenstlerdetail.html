@@ -2,10 +2,11 @@
     <h2>{{kuenstler.name}}</h2>
     <div class="row">
         <div class="col_Image col-xs-12 col-sm-4 col-md-4 col-lg-4"><img src="./img/Gross/{{kuenstler.bild}}"></div>
-        <div class="col_Content col-xs-12 col-sm-8 col-md-8 col-lg-8">{{kuenstler.beschreibung}}</div>
-        <h3>Alben von {{album.name}}</h3>
-        <div ng-repeat="album in alben">
-            <a href="{{song.youtubeLink}}" target="blank">{{album.name}}</a>
+        <div class="col_Content col-xs-12 col-sm-8 col-md-8 col-lg-8" style="background-color:#ff0000;">{{kuenstler.beschreibung}}
+            <h3>Alben von {{kuenstler.name}}</h3>
+            <div ng-repeat="album in alben">
+                {{album.name}}
+            </div>
         </div>
     </div>
 </div>

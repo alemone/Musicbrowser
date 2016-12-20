@@ -90,6 +90,13 @@ div.contentNr {
     float: left;
 }
 
+p.chartsnr {
+    width: 17px !important;
+    margin-top: 8px;
+    float: left;
+    text-align: right;
+}
+
 .content_boxSong {
     padding: 10px 0;
     border-bottom: 1px solid #2b2a2a;
@@ -97,6 +104,7 @@ div.contentNr {
 
 .content_boxSong img,
 .content_boxSongindex img {
+    float: left;
     width: 60px;
     height: 60px;
     margin: 5px 20px 5px 0;
@@ -141,9 +149,6 @@ div.contentName span {
     color: #aaaaaa !important;
 }
 
-
-/*  Definition disabled Button*/
-
 .content_box-right button:disabled {
     color: #aaaaaa !important;
 }
@@ -172,10 +177,10 @@ span.voteNr {
 }
 
 .searchbox {
-    float: left;
     width: 100px;
     margin-right: 10px;
     padding: 3px;
+    float: left;
     background-color: #232323;
     border: 1px solid #fff;
     outline: none;
