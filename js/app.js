@@ -38,6 +38,16 @@ musicbrowserApp.controller('top20Controller',
                 $scope.top20 = data;
             }
         );
+        //Ronny Müller
+        $scope.upvote = function(song) {
+            $http.get("./data.php?upvote=" + song.pk_song);
+            song.bewertung = song.bewertung - 1 + 2;
+        }
+        $scope.downvote = function(song) {
+                $http.get("./data.php?downvote=" + song.pk_song);
+                song.bewertung = song.bewertung - 1;
+            }
+            //Ronny Müller
     }
 );
 // Song Controller
@@ -48,6 +58,16 @@ musicbrowserApp.controller('songController',
                 $scope.songs = data;
             }
         );
+        //Ronny Müller
+        $scope.upvote = function(song) {
+            $http.get("./data.php?upvote=" + song.pk_song);
+            song.bewertung = song.bewertung - 1 + 2;
+        }
+        $scope.downvote = function(song) {
+                $http.get("./data.php?downvote=" + song.pk_song);
+                song.bewertung = song.bewertung - 1;
+            }
+            //Ronny Müller
     }
 );
 // Album Controller
@@ -99,21 +119,5 @@ musicbrowserApp.controller('kuenstlerDetailController',
                 $scope.alben = data;
             }
         );
-    }
-);
-
-
-// up udn downvote
-
-// up
-musicbrowserApp.controller('upController',
-    function upController($scope, $http) {
-        $http.get('data.php?upvote=1').success();
-    }
-);
-// down
-musicbrowserApp.controller('downController',
-    function downController($scope, $http) {
-        $http.get('data.php?downvote=2').success();
     }
 );

@@ -189,3 +189,20 @@ span.voteNr {
         width: 1080px;
     }
 }
+
+
+/* Ronny Müller */
+
+.searchbox {
+    width: 50px;
+    -webkit-transition: width 0.4s ease-in-out;
+    transition: width 0.4s ease-in-out;
+    color: black;
+}
+
+
+/* When the input field gets focus, change its width to 100% */
+
+.searchbox:focus {
+    width: 100%;
+}

@@ -1,19 +1,21 @@
 <div class="content_subpage">
-
+    <!-- Ronny Müller -->
+    <a href="#"><i class="fa fa-search"></i></a><input type="text" ng-model="suchfeld.name" class="searchbox">
+    <!-- Ronny Müller -->
     <h2>Songs</h2>
-    <div class="content_boxindex col-xs-12 col-sm-6 col-md-6 col-lg-6" ng-repeat="song in songs">
+    <div class="content_boxindex col-xs-12 col-sm-6 col-md-6 col-lg-6" ng-repeat="song in songs | filter: suchfeld:strict">
         <div class="content_box-left">
             <a href="{{song.youtubeLink}}" target="_blank">
                 <div class="content_boxSongindex">
-                    <div class="contentNr">{{$index + 1}}<img src="./img/{{song.bild}}"></div>
+                    <div class="contentNr"><img src="./img/{{song.bild}}"></div>
                     <div class="contentName">{{song.name}}<br><span>{{song.kuenstler}}<span></div>
                 </div>
             </a>
         </div>
         <div class="content_box-right">
-            <button type="button" id="up" ng-click="upvote()"><i class="fa fa-angle-up fa-2x" aria-hidden="true"></i></button>
+            <button type="button" id="up" onclick="this.disabled = true;" ng-click="upvote(song);"><i class="fa fa-angle-up fa-2x" aria-hidden="true"></i></button>
             <span class="voteNr">{{song.bewertung}}</span>
-                        <button type="button" id="down" ng-click="downvote()"><i class="fa fa-angle-down fa-2x" aria-hidden="true"></i></button>
+                        <button type="button" id="down" onclick="this.disabled = true;" ng-click="downvote(song);"><i class=" fa fa-angle-down fa-2x " aria-hidden="true "></i></button>
                     </div>
                 </div>
         </div>

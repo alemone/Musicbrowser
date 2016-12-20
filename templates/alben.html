@@ -1,7 +1,10 @@
 <div class="content_subpage">
+    <!-- Ronny Müller -->
+    <a href="#"><i class="fa fa-search"></i></a><input type="text" ng-model="suchfeld.name" class="searchbox">
+    <!-- Ronny Müller -->
     <h2>Alben</h2>
     <div class="content_box">
-        <a href="#album/{{album.pk_album}}" ng-repeat="album in alben">
+        <a href="#album/{{album.pk_album}}" ng-repeat="album in alben | filter: suchfeld:strict">
             <div class="content_boxSong col-xs-12 col-sm-6 col-md-6 col-lg-6">
                 <img src="./img/{{album.bild}}"><span class="contentName">{{album.name}}</span>
             </div>

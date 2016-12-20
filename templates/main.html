@@ -21,9 +21,9 @@
             </a>
         </div>
         <div class="content_box-right">
-            <button type="button" id="up" ng-click="upvote()"><i class="fa fa-angle-up fa-2x" aria-hidden="true"></i></button>
+            <button type="button" id={{song.pk_song}} onclick="this.disabled = true;" ng-click="upvote(song);"><i class="fa fa-angle-up fa-2x" aria-hidden="true"></i></button>
             <span class="voteNr">{{song.bewertung}}</span>
-                        <button type="button" id="down" ng-click="downvote()"><i class="fa fa-angle-down fa-2x" aria-hidden="true"></i></button>
+                        <button type="button" id="{{song.pk_song}}" onclick="this.disabled = true;" ng-click="downvote(song);"><i class="fa fa-angle-down fa-2x " aria-hidden="true "></i></button>
                     </div>
                 </div>
         </div>
