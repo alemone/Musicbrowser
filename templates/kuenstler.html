@@ -1,7 +1,5 @@
 <div class="content_subpage">
-    <!-- Ronny Müller -->
-    <a href="#"><i class="fa fa-search"></i></a><input type="text" ng-model="suchfeld.name" class="searchbox">
-    <!-- Ronny Müller -->
+    <div class="searchbox__top"><input type="text" ng-model="suchfeld.name" class="searchbox"><i class="fa fa-search"></i></div><br><br>
     <h2>K&uuml;nstler</h2>
     <div class="content_box">
         <a href="#artists/{{kuenstler.pk_kuenstler}}" ng-repeat="kuenstler in kuenstler | filter: suchfeld:strict">
