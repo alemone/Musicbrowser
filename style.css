@@ -44,6 +44,10 @@ h2 {
     padding-bottom: 20px;
 }
 
+h3 {
+    font-size: 18px;
+}
+
 
 /*  Elements*/
 
@@ -93,9 +97,17 @@ div.contentNr {
 
 .content_boxSong img,
 .content_boxSongindex img {
-    margin: 5px 20px;
     width: 60px;
     height: 60px;
+    margin: 5px 20px 5px 0;
+}
+
+.content_boxSongindex img {
+    margin-left: 20px;
+}
+
+img.songimg {
+    margin-left: 0;
 }
 
 div.contentName {
